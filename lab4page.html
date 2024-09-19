@@ -1,0 +1,112 @@
+ <html>
+    <head>
+       <title> Abhishek's Lab 4</title>
+    <link rel = "stylesheet" href="lab4.css">
+</head>
+    <body>
+        <h1 id="addtext">Welcome to INST377 - Lab 4</h1>
+        
+            <div class ="box-area">
+                <div class="content-box">
+                    <form onsubmit="event.preventDefault(); showAlert();">
+                        <label for="nameInput">Name:</label>
+                        <input type="text" id="nameInput" name="name" required>
+                        <button type="submit">Alert Me</button>
+                    </form>
+
+                      <script type ="text/javascript">
+                        function showAlert() {
+                            const name = document.getElementById("nameInput").value;
+                            if (name) {
+                                alert(`Hi, ${name}!`);
+            } else {
+                alert("Please enter your name.");
+            }
+        } 
+       </script> 
+                </div>
+
+            <div class = "box-bottom-area"> 
+                <div class ="content-box2">
+                    <form name="contactForm" onsubmit="return(formValidation())">
+                        <label>Text Tester:</label>
+                        <input type="text" name="tester" id="tester">
+                        <button type="submit">Validate Test</button>
+                    </form>
+            
+                    <script type="text/javascript">
+                        function formValidation() {
+                            const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                            if(document.contactForm.tester.value === "") {
+                                alert('Enter a Word!!!');
+                                return false;
+                            }
+                            if (validationRegex.test(document.contactForm.tester.value)) {
+                                alert('How about.... nah :(')
+                                return false
+                            }
+            
+                            return true;
+                        }
+                    </script>
+
+
+
+
+
+
+                    </script>
+                </div>
+
+            </div>  
+        
+            </div>
+            
+
+
+
+            <aside id="rules">
+                <button onclick="changeColor()">Change Color</button>
+      <script>
+       
+        function changeColor() {
+            const body = document.body;
+
+            if (body.style.backgroundColor === "beige") {
+                body.style.backgroundColor = "navy";
+            } else {
+                body.style.backgroundColor = "beige";
+            }
+        }
+    </script>
+            </aside>
+
+        </aside>
+
+        <aside id="rules2">
+           <button onclick="addText()">Add Text</button>
+           <script type ="text/javascript"> 
+            function addText(){
+                const heading = document.getElementById("addtext");
+                if (!heading.textContent.includes(" - Adding Text")) {
+                heading.textContent += " - Adding Text";
+            }
+
+            }
+
+               
+   
+           </script>      
+   
+            </aside>
+
+</div> 
+
+   
+    
+
+</body>
+</html>
+
+
+
